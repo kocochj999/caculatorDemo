@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Setting</name>
+   <name>Set Brightness</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e1b938c6-83be-4c52-8c63-6bc97f9ae2b4</testCaseGuid>
+   <testCaseGuid>d7cc4a06-d140-4423-bb8a-47afb30c972b</testCaseGuid>
 </TestCaseEntity>

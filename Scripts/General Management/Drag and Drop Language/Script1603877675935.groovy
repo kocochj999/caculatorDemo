@@ -10,25 +10,23 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-Mobile.startExistingApplication(GlobalVariable.caculator)
+Mobile.scrollToText('General Management')
+Mobile.tap(findTestObject('Common/Main Option', [('optionName'):'General management']), 0)
+Mobile.tap(findTestObject('Common/Main Option', [('optionName'):'Language and input']), 0)
 
-Mobile.tap(findTestObject('App/Calculator/Keypad', [('idValue') : firstNum]), 0)
+Mobile.waitForElementPresent(findTestObject('Common/Main Option', [('optionName'):'Language']), 3)
+Mobile.tap(findTestObject('Common/Main Option', [('optionName'):'Language']), 0)
 
-Mobile.tap(findTestObject('App/Calculator/Keypad', [('idValue') : math]), 0)
+TestObject fromObject = findTestObject('General Management/Language and input/Language/Language', [('language'):'Viet'])
 
-Mobile.tap(findTestObject('App/Calculator/Keypad', [('idValue') : secondNum]), 0)
+TestObject toObject = findTestObject('General Management/Language and input/Language/Language', [('language'):'English'])
 
-String previewResult = Mobile.getText(findTestObject('App/Calculator/Preview'), 0)
-String result = CustomKeywords.'Calculation.calculate'(firstNum, secondNum, math)
-Mobile.verifyMatch(previewResult, result, true)
 
-Mobile.tap(findTestObject('App/Calculator/Keypad', [('idValue') : 'equal']), 2)
-
-Mobile.closeApplication()
-
+Mobile.dragAndDrop(fromObject, toObject, 3)

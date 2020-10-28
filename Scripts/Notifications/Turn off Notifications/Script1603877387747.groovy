@@ -16,3 +16,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+Mobile.scrollToText('Notifications')
+ Mobile.tap(findTestObject('Common/Main Option', [('optionName'):'Notifications']), 0)
+ Mobile.tap(findTestObject('Notifications/SwitchButton', [('buttonName'):'Do not disturb']), 0)
+ Mobile.tap(findTestObject('Notifications/RecentlySentButton', [('buttonName'):'Google']), 0)
+ Mobile.tap(findTestObject('Notifications/RecentlySentButton', [('buttonName'):'Appium Settings']), 0)
+ Mobile.pressBack()
+ 

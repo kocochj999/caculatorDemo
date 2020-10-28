@@ -16,14 +16,3 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-Mobile.startExistingApplication(GlobalVariable.caculator)
-Mobile.tap(findTestObject('Object Repository/Keypad',[('idValue'):'05']), 0)
-Mobile.tap(findTestObject('Object Repository/Keypad',[('idValue'):'mul']), 0)
-Mobile.tap(findTestObject('Object Repository/Keypad',[('idValue'):'04']), 0)
-String previewResult = Mobile.getText(findTestObject('Object Repository/Preview'),0)
-Mobile.verifyMatch(previewResult, "20", true)
-Mobile.tap(findTestObject('Object Repository/Keypad',[('idValue'):'equal']), 0)
-Mobile.delay(3)
-String result = Mobile.getText(findTestObject('Object Repository/Formula'),0)
-
-Mobile.verifyMatch(result, "20", true)

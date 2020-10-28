@@ -9,4 +9,9 @@
       <initValue>'com.sec.android.app.popupcalculator'</initValue>
       <name>caculator</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'com.android.chrome'</initValue>
+      <name>chrome</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

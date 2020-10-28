@@ -6,6 +6,7 @@
    <UUID>0dcde679-6f52-434a-9481-504930c122b7</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>C:\Users\user\git\calculatorDemo\CalculatorDemo.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CalculateInApp</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c8d6e295-ba5e-46a7-95ae-0d2c4db8a9d6</testCaseGuid>
+   <variable>
+      <defaultValue>'05'</defaultValue>
+      <description></description>
+      <id>8e6c2476-dda1-4658-8661-bd3b0433434b</id>
+      <masked>false</masked>
+      <name>firstNum</name>
+   </variable>
+   <variable>
+      <defaultValue>'04'</defaultValue>
+      <description></description>
+      <id>71944994-41e5-41af-87a0-7a30a67a9f58</id>
+      <masked>false</masked>
+      <name>secondNum</name>
+   </variable>
+   <variable>
+      <defaultValue>'mul'</defaultValue>
+      <description></description>
+      <id>c2eece59-f47a-4291-a193-d1f8d13b919f</id>
+      <masked>false</masked>
+      <name>math</name>
+   </variable>
+</TestCaseEntity>

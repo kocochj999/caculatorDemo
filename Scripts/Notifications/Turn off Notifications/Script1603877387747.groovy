@@ -1,25 +1,32 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory as MobileDriverFactory
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
-import com.kms.katalon.core.testcase.TestCase as TestCase
-import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import io.appium.java_client.AppiumDriver as AppiumDriver
+import io.appium.java_client.MobileElement as MobileElement
 
 Mobile.scrollToText('Notifications')
- Mobile.tap(findTestObject('Common/Main Option', [('optionName'):'Notifications']), 0)
- Mobile.tap(findTestObject('Notifications/SwitchButton', [('buttonName'):'Do not disturb']), 0)
- Mobile.tap(findTestObject('Notifications/RecentlySentButton', [('buttonName'):'Google']), 0)
- Mobile.tap(findTestObject('Notifications/RecentlySentButton', [('buttonName'):'Appium Settings']), 0)
- Mobile.pressBack()
- 
+
+Mobile.tap(findTestObject('Common/Main Option', [('optionName') : 'Notifications']), 0)
+
+Mobile.scrollToText('See all')
+
+Mobile.tap(findTestObject('Notifications/See All'), 0)
+
+AppiumDriver<MobileElement> driver = MobileDriverFactory.getDriver()
+
+Mobile.delay(3)
+
+//CustomKeywords.'swipe.swipeDown'()
+
+List<MobileElement> notifications = driver.findElementsById("android:id/switch_widget") 
+
+for (MobileElement noti : notifications) {
+	if(noti.getAttribute("checked") == "true")
+	{
+		noti.click();
+    }
+}
+
+Mobile.pressBack()

@@ -17,6 +17,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 Mobile.scrollToText('Display')
+
 Mobile.tap(findTestObject('Common/Main Option', [('optionName'):'Display']), 0)
+
 Mobile.setSliderValue(findTestObject('Display/BrightnessBar'), 100, 0)
+
 Mobile.pressBack()

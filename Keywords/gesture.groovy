@@ -12,10 +12,10 @@ public class gesture {
 		def driver = MobileDriverFactory.getDriver()
 		int sourceX = Mobile.getElementLeftPosition(source, 0)
 		int sourceY = Mobile.getElementTopPosition(source, 0)
-		
+
 		int tartgetX = Mobile.getElementLeftPosition(target, 0)
 		int targetY = Mobile.getElementTopPosition(target, 0) - 20
-		
+
 		TouchAction action = new TouchAction(driver)
 		PointOption po = new PointOption()
 		action.longPress(po.point(sourceX, sourceY)).moveTo(po.point(tartgetX,targetY)).release().perform()

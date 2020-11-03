@@ -1,4 +1,7 @@
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import org.junit.After
+
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory as MobileDriverFactory
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -8,25 +11,12 @@ import io.appium.java_client.MobileElement as MobileElement
 
 Mobile.scrollToText('Notifications')
 
-Mobile.tap(findTestObject('Common/Main Option', [('optionName') : 'Notifications']), 0)
+CustomKeywords.'gesture.tap'(findTestObject('Common/Main Option', [('optionName') : 'Notifications']))
 
 Mobile.scrollToText('See all')
 
-Mobile.tap(findTestObject('Notifications/See All'), 0)
+CustomKeywords.'gesture.tap'(findTestObject('Notifications/See All'))
 
-AppiumDriver<MobileElement> driver = MobileDriverFactory.getDriver()
-
-Mobile.delay(3)
-
-//CustomKeywords.'swipe.swipeDown'()
-
-List<MobileElement> notifications = driver.findElementsById("android:id/switch_widget") 
-
-for (MobileElement noti : notifications) {
-	if(noti.getAttribute("checked") == "true")
-	{
-		noti.click();
-    }
-}
+CustomKeywords.'Actions.uncheckNoti'('android:id/switch_widget')
 
 Mobile.pressBack()

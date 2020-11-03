@@ -19,4 +19,9 @@
       <initValue>'com.android.settings'</initValue>
       <name>settings</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'com.sec.android.app.clockpackage'</initValue>
+      <name>clock</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
